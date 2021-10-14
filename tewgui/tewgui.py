@@ -1,6 +1,5 @@
 import tkinter as tk
 from tkinter import ttk
-from typing import List
 import getpass
 
 from tew652brp.client import Client
@@ -141,7 +140,6 @@ class RouterGUI:
 
     def init_view(self):
         for frame in self.frames:
-            # frame.pack(expand=False, fill=None)
             self.notebook.add(frame, text='virtual')
         self.notebook.pack(fill='both', expand=False)
 
@@ -150,10 +148,14 @@ class RouterGUI:
         self.root.mainloop()
 
 
-if __name__ == '__main__':
+def main():
     router_url = input('Enter router URL: ')
     username = input('Enter your username: ')
     passwd = getpass.getpass()
 
     gui = RouterGUI(400, 400, router_url, username, passwd)
     gui.exec()
+
+
+if __name__ == '__main__':
+    main()
