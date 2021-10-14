@@ -48,6 +48,7 @@ class Window:
     def __init__(self, width, height):
         self.root = tk.Tk()
         self.root.geometry(f'{width}x{height}')
+        self.root.iconphoto(False, tk.PhotoImage(file='./src/icon.png'))
 
         self.menubar = tk.Menu(self.root)
 
