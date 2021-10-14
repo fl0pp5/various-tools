@@ -1,4 +1,5 @@
 import datetime
+import os
 import pathlib
 import time
 import tkinter as tk
@@ -89,6 +90,8 @@ class Window:
         for image in self.transform_images():
             file_name = self.DEFAULT_SAVE_FILE.format(time.time())
             image.save(f'{folder_name}/{file_name}')
+
+        mb.showinfo('Файлы обработаны', message=f'Файлы сохранены в {os.path.join(os.getcwd(), folder_name)}')
 
     def add_files(self):
         bad_files = []
